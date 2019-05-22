@@ -1,0 +1,29 @@
+{% extends "::base.html.twig" %}
+
+	{% block head %}
+		<meta charset="utf-8"/>
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+	{% endblock %}
+	{% block body %}
+		<div>
+			<div class="text-center">
+			<h2>Liste des thèmes</h2>
+			{% if choix=="theme" %}
+				{% for Theme in Themes %}
+					<p><a href="/theme/edit/{{Theme.id}}">{{Theme.libelle}}</a></p>
+
+
+				{% endfor %}
+			{% else %}
+					{% for Theme in Themes %}
+					<p><a href="/soustheme/lister/{{Theme.id}}">{{Theme.libelle}}</a></p>
+
+
+					{% endfor %}
+
+
+			{% endif %}
+
+			</div>
+		</div>
+	{% endblock %}

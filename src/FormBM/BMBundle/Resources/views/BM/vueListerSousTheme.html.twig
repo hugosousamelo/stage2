@@ -1,0 +1,19 @@
+{% extends "::base.html.twig" %}
+
+	{% block head %}
+		<meta charset="utf-8"/>
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+	{% endblock %}
+	{% block body %}
+		<div>
+			<div class="text-center">
+			<h2>Liste des sous-thèmes</h2>
+
+			{% for SousTheme in SousThemes %}
+				<p><a href="/soustheme/edit/{{SousTheme.id}}">{{SousTheme.libelle}}</a></p>
+
+
+			{% endfor %}
+			</div>
+		</div>
+	{% endblock %}

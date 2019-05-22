@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<head>
+	<meta charset="UTF-8" />
+	<title>{% block title %}BM{% endblock %}</title>
+	{% block stylesheets %}{% endblock %}
+
+
+	<link rel="stylesheet" href="/css/agency.css" />
+	<link rel="icon" type="image/x-icon" href="/image/bm.ico" />
+</head>
+{% block body %}
+
+
+
+
+	<div class="page">
+		<div class ="attestation">
+			<br>
+			<img class="logoCadenas" src="/image/cadenas.svg" alt="LogoCadenas">
+			<font size="7">ATTESTATION ELECTRONIQUE</font>
+		</div>
+		<img class="logoClient" src="/image/logoEntreprise/{{logo[0]['nom']}}.png" alt="Logo">
+		<article class="titreClient">
+			<h7 style="margin-left: 50px;">{{infoEntreprise[0]['nom']}} // </h7>
+			<br>
+			<h7 style="margin-left : 50px;"> {{infoEntreprise[0]['ville']}} - {{infoEntreprise[0]['codePostal']}}</h7>
+
+<br>
+			<br>
+			<br>
+			<div class="messageEntreprise">
+				<font size="4">{{DescriptionEtp}}</font>
+			</div>
+		</article>
+		<div class="barre"></div>
+		<br>
+		<div class="zoneB"></div>
+		<section class="zoneImage">
+			{% if moyTot[0][1]|round >= 80  %}
+
+
+				<img class="Certificat" src="/image/Certificats/{{ 'now'|date('Y') }}/or-{{ 'now'|date('Y') }}.png" alt="BadgeOR">
+
+			{% elseif moyTot[0][1]|round > 60 and moyTot[0][1]|round < 80  %}
+
+
+				<img class="Certificat" src="/image/Certificats/{{ 'now'|date('Y') }}/argent-{{ 'now'|date('Y') }}.png" alt="BadgeARGENT">
+			{% else %}
+
+
+
+				<img class="Certificat" src="/image/Certificats/{{ 'now'|date('Y') }}/bronze-{{ 'now'|date('Y') }}.png" alt="BadgeBRONZE">
+
+			{% endif %}
+
+
+		</section>
+		<div class="zoneA">
+			<div class="messagePerso">
+				<br>
+				<br>
+				<font size="5">{{avisPerso}}</font>
+			</div>
+		</div>
+		<div class="pourcentage">
+			<font style="font-weight:bold;">{{moyTot[0][1]|round}} %</font>
+		</div>
+		<br>
+		<br>
+		<div class="zoneC">
+			<i>TAUX DE SATISFACTION</i>
+		</div>
+		<br>
+
+		<br>
+		<br>
+		<h3>
+			<div class="a_centrer">
+				{% for theme in moyTheme %}
+
+
+					<span>
+							<div class="nomTheme">
+								<div style="margin-top: -40px;">
+									<h3>{{theme["libelle"]}}</h3>
+								</div>
+								<div>
+									<div class="progress-bar">
+										<div style ="width: {{theme['moy']|round}}%; text-align: right;"class="niveau">&nbsp;&nbsp;&nbsp;&nbsp;{{theme["moy"]|round}}%</div>
+									</div>
+								</div>
+							</div>
+						</span>
+
+				{% endfor %}
+
+
+			</div>
+		</h3>
+	<div>
+
+		<img class="signature" src="/image/signature.png">
+			<font size="3" style="color: black; position: absolute;top:1440px;left:650px;">
+				Elvire GANDJI-NICOLAS  CEO de BoostMakers
+
+			</font>
+
+		</article>
+
+		<article style="position: absolute;top:1480px;" class="titreCC">
+			<img style="margin-top:-90px;"class="logoCC" src= "/image/logoBM.png">
+			<font>BoostMakers</font>
+			<font> | Contact : 06 95 65 14 53 </font>
+			<font> | sara@boost-makers.com</font>
+			<font> | www.boost-makers.com/</font>
+			<font> | {{ "now"|date("d/m/Y") }}</font>
+		</article>
+	</div>
+	</div>
+	<div class="page2">
+		<div class="barreInfoSup">
+			<br>
+			<font size="7" classe="titreIS">
+				<center>INFORMATIONS COMPLEMENTAIRES</center>
+			</font>
+		</div>
+		<div class="barreTitreCoordonee">
+			<font size="6" style="font-weight:bold;">
+				<center>Coordonnées</center>
+			</font>
+		</div>
+		<div class="carreCoordonee">
+			<img class="logoClient2" src="/image/logoEntreprise/{{logo[0]['nom']}}.png" alt="Logo">
+			<article class="titreClient2">
+				<font size="5">Entreprise :
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{infoEntreprise[0]['nom']}}
+
+					<br>
+
+					Ville :
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{infoEntreprise[0]['ville']}} - {{infoEntreprise[0]['codePostal']}}
+
+					<br>
+
+					Nom du contact :
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{infoEntreprise[0]['nomDirigeant']}}
+
+					<br>
+
+					Site web :
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					{{infoEntreprise[0]['siteWeb']}}
+
+					<br>
+
+					Numéro unique :
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{infoEntreprise[0]['numUnique']}}
+
+					<br>
+				</font>
+			</article>
+		</div>
+		<div class="barreTitreAvisClient">
+			<font size="6" style="font-weight:bold;">
+				<center>Clients professionnels</center>
+			</font>
+		</div>
+		<div class="carreAvisCLient">
+
+			{% for unAvis in lesAvis %}
+
+				{% if unAvis["statut"] == "Client" %}
+
+
+					<INPUT TYPE=button id="btclient" value="{{unAvis['libelle']}}" DISABLED>
+
+				{% endif %}
+			{% endfor %}
+
+
+		</div>
+		<div class="barreTitreAvisSalarie">
+			<font size="6" style="font-weight:bold;">
+				<center>Salariés</center>
+			</font>
+		</div>
+		<div class="carreAvisSalarie">
+			{% for unAvis in lesAvis %}
+
+				{% if unAvis["statut"] == "Salarie" %}
+
+
+
+					<INPUT TYPE=button id="btsalarie" value="{{unAvis['libelle']}}" DISABLED>
+
+				{% endif %}
+			{% endfor %}
+
+
+		</div>
+		<div class="critere">
+			<font size="6" class="critere">
+				{% if csv[5]["message0à20"] is defined and csv[5]["message0à20"]!= null %}
+
+					<center>{{ csv[5]["message0à20"] }}</center>
+				{% else %}
+
+					<center>C’est quoi la notation certifiée de BoostMakers?</center>
+				{% endif %}
+
+			</font>
+			<font size="5" class="critere2">
+				{% if csv[5]["message20à40"] is defined and csv[5]["message20à40"]!= null %}
+
+					<center>{{ csv[5]["message20à40"] }}</center>
+				{% else %}
+
+					<center>C’est le résultat d’une évaluation des fournisseurs sur plus de 60 critères classés sous 8 thématiques. L’objectif est d’aider le porteur de projets à avoir une lecture simple des offres et des engagements de fournisseurs. Nous fournissons un liste d’indicateurs d’aide à la décision permettant de bien choisir son fournisseur. Les thématiques sont relatives à la qualité de l’offre, le risque fournisseur, les facteurs de réussite du projet, la qualité du service, la capacité à tenir les engagements pris lors de la signature d’un contrat et la capacité du fournisseur à accompagner son client de A à Z.</center>
+				{% endif %}
+
+			</font>
+		</div>
+		<br>
+		<br>
+		<img class="logoCC" src= "/image/logoBM.png">
+		<article class="titreCC">
+			<font>BoostMakers</font>
+			<font> | Contact : 06 95 65 14 53 </font>
+			<font> | sara@boost-makers.com</font>
+			<font> | www.boost-makers.com/</font>
+			<font> | {{ "now"|date("d/m/Y") }}</font>
+		</article>
+
+	</div>
+
+{% endblock %}
+
+
+

@@ -1,0 +1,838 @@
+
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>Boostmakers</title>
+    <link rel="stylesheet" type="Text/css" href="/css/prive.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+</head>
+<body>
+
+<section class="page">
+    <br>
+    <img src="/image/logoBM.png" class ="logoBM">
+    <div class="triangle-down"></div>
+    <div class="parallelogram"></div>
+    <div class="rectangle"></div>
+    <div class="triangle-right"></div>
+    <div class="triangle-right2"></div>
+    <div class="rectangle2"></div>
+    <div class="triangle-down2">
+        <div class="cercle"></div>
+        <img src="/image/logoEntreprise/{{logo[0]['nom']}}.png" class="logoClient">
+    </div>
+    <div class="rectangle3">
+        <img src="/image/ombre.png" class="ombre">
+    </div>
+    <div class="head">
+        <strong>Boostmakers
+
+
+            <br>
+            <u>www.boostmakers.com</u>
+            <br>Sara sara@boost-makers.com
+
+
+        </strong>
+    </div>
+    <div class="headC">
+        <strong>{{infoEntreprise[0]['nom']}}
+
+
+            <br>
+            <u>{{infoEntreprise[0]['siteWeb']}}</u>
+            <br>{{infoEntreprise[0]['ville']}} - {{infoEntreprise[0]['codePostal']}}
+
+
+            <br>{{infoEntreprise[0]['nomDirigeant']}}
+
+
+            <br>n°unique BM: {{infoEntreprise[0]['numUnique']}}
+
+
+        </strong>
+    </div>
+    <div class="titre">▹&nbsp;&nbsp;T R U S T ' I N</div>
+    <table class="t">
+        <tr class="entete">
+            <td colspan=2 class="score">VOTRE
+
+
+                <br>SCORE
+
+
+            </td>
+            <td colspan=2>NIVEAU DE QUALIFICATION À ATTEINDRE</td>
+        </tr>
+        {% if moyTot[0][1]|round > 80 %}
+
+
+
+            <tr>
+                <td class="prc">
+                    <div class="gold">{{moyTot[0][1]|round}}%</div>
+                </td>
+                <td class="x">
+                    <div class="gold">X</div>
+                </td>
+                <td class="rank">
+                    <div class="gold">Gold</div>
+                </td>
+                <td class="prctg"> 80%-100% </td>
+            </tr>
+        {% else %}
+
+
+
+            <tr class="backgrey">
+                <td class="prc">
+                    <div class="gold"></div>
+                </td>
+                <td class="x">
+                    <div class="gold"></div>
+                </td>
+                <td class="rank">
+                    <div class="gold">Gold</div>
+                </td>
+                <td class="prctg"> 80%-100% </td>
+            </tr>
+        {% endif %}
+
+        {% if moyTot[0][1]|round < 80 and moyTot[0][1]|round > 60 %}
+
+
+
+            <tr>
+                <td class="prc">
+                    <div class="silver">{{moyTot[0][1]|round}}%</div>
+                </td>
+                <td class="x">
+                    <div class="silver">X</div>
+                </td>
+                <td class="rank">
+                    <div class="silver">Silver</div>
+                </td>
+                <td class="prctg">61%-79%</td>
+            </tr>
+        {% else %}
+
+
+
+            <tr class="backgrey">
+                <td class="prc">
+                    <div class="silver"></div>
+                </td>
+                <td class="x">
+                    <div class="silver"></div>
+                </td>
+                <td class="rank">
+                    <div class="silver">Silver</div>
+                </td>
+                <td class="prctg">61%-79%</td>
+            </tr>
+        {% endif %}
+
+        {% if moyTot[0][1]|round <= 60 and moyTot[0][1]|round > 0 %}
+
+
+
+            <tr>
+                <td class="prc">
+                    <div class="bronze">{{moyTot[0][1]|round}}%</div>
+                </td>
+                <td class="x">
+                    <div class="bronze">X</div>
+                </td>
+                <td class="rank">
+                    <div class="bronze">Bronze</div>
+                </td>
+                <td class="prctg">0%-60%</td>
+            </tr>
+        {% else %}
+
+
+
+            <tr class="backgrey">
+                <td class="prc">
+                    <div class="bronze"></div>
+                </td>
+                <td class="x">
+                    <div class="bronze"></div>
+                </td>
+                <td class="rank">
+                    <div class="bronze">Bronze</div>
+                </td>
+                <td class="prctg">0%-60%</td>
+            </tr>
+        {% endif %}
+
+
+
+    </table>
+    <br>
+
+    <div class="txt2">
+        <strong class="big"></strong>
+        <b>Votre indice de confiance est de</b>
+
+
+        <strong style="font-size: 50px;" class="prcTxt">
+            <b>{{moyTot[0][1]|round}}%</b>
+        </strong>.
+        {{ avisPerso }}
+
+
+
+
+
+
+    </div>
+    {% if moyTot[0][1]|round >= 80  %}
+
+
+
+        <center>
+            <img class="certificat2" src="/image/Certificats/{{ 'now'|date('Y') }}/AAA-{{ 'now'|date('Y') }}.png" alt="BadgeAAA">
+        </center>
+
+    {% elseif moyTot[0][1]|round > 60 and moyTot[0][1]|round < 80  %}
+
+
+
+        <center>
+            <img class="certificat2" src="/image/Certificats/{{ 'now'|date('Y') }}/BBB-{{ 'now'|date('Y') }}.png" alt="BadgeBBB">
+        </center>
+    {% else %}
+
+
+
+
+        <center>
+            <img class="certificat2" src="/image/Certificats/{{ 'now'|date('Y') }}/CCC-{{ 'now'|date('Y') }}.png" alt="BadgeCCC">
+        </center>
+
+    {% endif %}
+
+</section>
+
+<section class="page">
+    <img src="/image/logoBM.png" class ="logoBM">
+    <div class="triangle-down"></div>
+    <div class="parallelogram"></div>
+    <div class="rectangle"></div>
+    <div class="cerclev2">
+        <img src="/image/logoEntreprise/{{logo[0]['nom']}}.png" class="logoClientv2">
+    </div>
+    <div class="head">
+        <strong>Boostmakers
+
+
+            <br>
+            <u>www.boostmakers.com</u>
+            <br>Sara sara@boost-makers.com
+
+
+        </strong>
+    </div>
+    <div class="titre2">▹ D E T A I L &nbsp;D E S &nbsp;S C O R E S</div>
+    <div class="textp2">Les 6 indicateurs génèrent un score pour chaque thème en fonction du poids attribué à
+        chaque thématique.</div>
+    <ul>
+        <div class="indic1">0%</div>
+        <div class="indic2">20%</div>
+        <div class="indic3">40%</div>
+        <div class="indic4">60%</div>
+        <div class="indic5">80%</div>
+        <div class="indic6">100%</div>
+    </ul>
+    <ul>
+        <div class="text1">
+            <strong>Non défini ou non réalisé.</strong>
+            <br> L'approche n'existe pas ou il n'y a pas d'organisation.
+
+
+        </div>
+        <div class="text2">
+            <strong>Initiée. L'approche est basique.</strong>
+            <br> Elle est aussi inconnue.
+
+
+        </div>
+        <div class="text3">
+            <strong>Reproductible.</strong>
+            <br> L’approche structurée minimale. Les méthodes sont reproductibles. Peu d'actions concrètes mises en œuvre
+
+
+        </div>
+        <div class="text4">
+            <strong>Confirmée.</strong>
+            <br> Approche maîtrisée mais pas pour tous les acteurs de la même organisation
+
+
+        </div>
+        <div class="text5">
+            <strong>Excellence . Maîtrisée.</strong>
+            <br> Approche maîtrisée mais pas pour tous les acteurs de la même organisation
+
+
+        </div>
+        <div class="text6">
+            <strong>Excellence.</strong>
+            <br> Approche structuré et Approche structuré et proactive. Pratiques innovantes. Stade ultime de la démarche du progrès continu.
+
+
+        </div>
+    </ul>
+</section>
+<section style="margin-top:-30px;"class="page">
+    <img src="/image/logoBM.png" class ="logoBM">
+    <div class="triangle-down"></div>
+    <div class="parallelogram"></div>
+    <div class="rectangle"></div>
+    <div class="cerclev2">
+        <img src="/image/logoEntreprise/{{logo[0]['nom']}}.png"class="logoClientv2">
+    </div>
+    <div class="head">
+        <strong>Boostmakers
+
+
+            <br>
+            <u>www.boostmakers.com</u>
+            <br>Sara sara@boost-makers.com
+
+
+        </strong>
+    </div>
+
+    <div class="titre3">LE &nbsp;&nbsp;SCORE &nbsp;&nbsp;EST &nbsp;&nbsp;DE &nbsp;&nbsp;{{moyTot[0][1]|round}}%</div>
+    <div class="detail">THÈME &nbsp;// &nbsp;DÉTAIL &nbsp;DE &nbsp;VOTRE &nbsp;SCORE
+
+
+
+
+        <strong>
+            {% set i = 0 %}
+            {% set cpt2=0 %}
+            {% for theme in moyTheme %}
+
+
+
+
+            <table style="width: 100%;">
+                <tr>
+                    <td style="background-color:#4BB5C1;color: white;font-size: 14px;">{{theme["libelle"]}}
+
+
+
+                    <td style="width : 20%; font-size: 14px;">
+                        {{theme["moy"]|round}}%
+                    </td>
+                    {% for sousTheme in listeSousTheme %}
+
+
+                        {% if theme["id"] == sousTheme["id"] and sousTheme["pourcentage"]!=null %}
+
+
+
+                            <table >
+                                <tr>
+                                    <td style="width : 60px; border :0;font-size: 14px;"></td>
+                                    <td style="width : 490px; background-color: lightgrey;font-size: 14px;">{{ sousTheme["libelle"] }}</td>
+                                    <td style="width: 100px;font-size: 14px;">{{ sousTheme["pourcentage"] }}%</td>
+                                </tr>
+                                <tr>
+                            </table>
+                            <div class="description" style="margin-left: 65px; width: 650px;">
+                                {% if sousTheme["pourcentage"]|round >= 0 and sousTheme["pourcentage"]|round < 20  %}
+
+
+
+                                    <font class="messageprc">{{messagePourcent[1]["message0à20"]}}</font>
+
+
+                                {% elseif sousTheme["pourcentage"]|round >= 20 and sousTheme["pourcentage"]|round < 40  %}
+
+
+
+                                    <font class="messageprc">{{messagePourcent[1]["message20à40"]}}</font>
+
+
+                                {% elseif sousTheme["pourcentage"]|round >= 40 and sousTheme["pourcentage"]|round < 60  %}
+
+
+
+                                    <font class="messageprc">{{messagePourcent[1]["message40à60"]}}</font>
+
+
+                                {% elseif sousTheme["pourcentage"]|round >= 60 and sousTheme["pourcentage"]|round < 80  %}
+
+
+
+                                    <font class="messageprc">{{messagePourcent[1]["message60à80"]}}</font>
+                                {% else %}
+
+
+
+                                    <font class="messageprc">{{messagePourcent[1]["message80à100"]}}</font>
+
+                                {% endif %}
+
+                            </div>
+                            <br>
+                        {% endif %}
+                    {% endfor %}
+                    {%  set cpt2 =cpt2 + 1 %}
+                </tr>
+            </table>
+        </strong>
+    </div>
+</section>
+
+{% if i <= cpt2 %}
+{% set i = i+1 %}
+    {% if i <= 7 and i >=1 %}
+<section class="pagefixe{{ i }}" style="margin-top: -30px;">
+    <img src="/image/logoBM.png" class ="logoBM" alt="logoBM">
+    <div class="triangle-down"></div>
+    <div class="parallelogram"></div>
+    <div class="rectangle"></div>
+    <div class="cerclev2">
+        <img src="/image/logoEntreprise/{{logo[0]['nom']}}.png" class="logoClientv2">
+    </div>
+    <div class="head">
+        <strong>Boostmakers
+
+
+            <br>
+            <u>www.boostmakers.com</u>
+            <br>Sara sara@boost-makers.com
+
+
+        </strong>
+    </div>
+    <div class="detail" style="margin-top: 180px;">
+        <strong>
+            {% endif %}
+            {% endif %}
+            {% endfor %}
+
+        </strong>
+    </div>
+</section>
+</div>
+
+{% if cpt2 >=8 %}
+
+    <section class="pagefixe{{cpt2}}">
+        <img src="/image/logoBM.png" class ="logoBM">
+        <div class="triangle-down"></div>
+        <div class="parallelogram"></div>
+        <div class="rectangle"></div>
+        <div class="cerclev2">
+            <img src="/image/logoEntreprise/{{logo[0]['nom']}}.png" class="logoClientv2">
+        </div>
+        <div class="head">
+            <strong>Boostmakers
+
+
+                <br>
+                <u>www.boostmakers.com</u>
+                <br>Sara sara@boost-makers.com
+
+
+            </strong>
+        </div>
+        <br>
+        <br>
+        <br>
+        <br>
+        <div class="titre4">&nbsp;&nbsp;  &nbsp;&nbsp;▹ &nbsp;DETAIL &nbsp;DU &nbsp;SCORE</div>
+        <div class="graph">
+            <div id="chart_div" style="width: 110%; height: 100%; margin-left:-20px;"></div>
+
+
+            <div style="font-size :30px;margin-top:50px";>&nbsp;&nbsp;  &nbsp;&nbsp;▹ LEGENDE : </div>
+            <br>
+            <table style="width: 85%;background-color: lightgrey; margin-left: 60px;">
+                {% set legende = ["A","B","C","D","E","F","G","H"] %}
+                {% set cpt=0 %}
+                {% for theme in moyTheme %}
+
+
+
+                    <tr>
+                        <td style="width : 10%; border:0;">{{ legende[cpt] }}</td>
+                        <td style="background-color:grey ;border : 0;color: white; width:90%">{{ theme['libelle'] }} </td>
+                    </tr>
+
+                    {%  set cpt =cpt + 1 %}
+                {%  endfor %}
+
+            </table></div>
+    </section>
+{% else %}
+    <section class="pagefixe{{cpt2}}" style="margin-top: -30px;">
+        <img src="/image/logoBM.png" class ="logoBM">
+        <div class="triangle-down"></div>
+        <div class="parallelogram"></div>
+        <div class="rectangle"></div>
+        <div class="cerclev2">
+            <img src="/image/logoEntreprise/{{logo[0]['nom']}}.png" class="logoClientv2">
+        </div>
+        <div class="head">
+            <strong>Boostmakers
+
+
+                <br>
+                <u>www.boostmakers.com</u>
+                <br>Sara sara@boost-makers.com
+
+
+            </strong>
+        </div>
+        <br>
+        <br>
+        <br>
+        <br>
+        <div class="titre4">&nbsp;&nbsp;  &nbsp;&nbsp;▹ &nbsp;DETAIL &nbsp;DU &nbsp;SCORE</div>
+        <div class="graph">
+            <div id="chart_div" style="width: 110%; height: 100%; margin-left:-20px;"></div>
+
+
+            <div style="font-size :30px;margin-top:50px";>&nbsp;&nbsp;  &nbsp;&nbsp;▹ LEGENDE : </div>
+            <br>
+            <table style="width: 85%;background-color: lightgrey; margin-left: 60px;">
+                {% set legende = ["A","B","C","D","E","F","G","H"] %}
+                {% set cpt=0 %}
+                {% for theme in moyTheme %}
+
+
+
+                    <tr>
+                        <td style="width : 10%; border:0;">{{ legende[cpt] }}</td>
+                        <td style="background-color:grey ;border : 0;color: white; width:90%">{{ theme['libelle'] }} </td>
+                    </tr>
+
+                    {%  set cpt =cpt + 1 %}
+                {%  endfor %}
+
+
+
+
+            </table></div>
+    </section>
+{% endif %}
+{% if cpt2 >=8 %}
+    <section class="pagefixe{{cpt2+1}}">
+        <img src="/image/logoBM.png" class ="logoBM">
+        <div class="triangle-down"></div>
+        <div class="parallelogram"></div>
+        <div class="rectangle"></div>
+        <div class="cerclev2">
+            <img src="/image/logoEntreprise/{{logo[0]['nom']}}.png" class="logoClientv2">
+        </div>
+        <div class="head">
+            <strong>Boostmakers
+
+
+                <br>
+                <u>www.boostmakers.com</u>
+                <br>Sara sara@boost-makers.com
+
+            </strong>
+        </div>
+        <div style ="margin-top:200px;font-size:30px;">&nbsp;&nbsp;&nbsp;&nbsp;▹ &nbsp;AVIS</div>
+        <div class="titreClient">
+            <center>
+                <font size="6">Clients professionnels</font>
+            </center>
+        </div>
+        <div class="titreSalarie">
+            <center>
+                <font size="6">Salariés</font>
+            </center>
+        </div>
+        <div class="avisClient">
+            {% for unAvis in lesAvis %}
+                {% if unAvis["statut"] == "Client" %}
+
+                    <INPUT TYPE=button id="btclient" value="{{unAvis['libelle']}}" DISABLED>
+
+                {% endif %}
+            {% endfor %}
+
+
+
+        </div>
+        <div class="avisSalarie">
+            {% for unAvis in lesAvis %}
+
+                {% if unAvis["statut"] == "Salarie" %}
+
+                    <INPUT TYPE=button id="btsalarie" value="{{unAvis['libelle']}}" DISABLED>
+
+                {% endif %}
+
+            {% endfor %}
+
+
+
+        </div>
+        </div>
+    </section>
+
+{% else %}
+    <section class="pagefixe{{cpt2+1}}" style="margin-top: -30px;">
+        <img src="/image/logoBM.png" class ="logoBM">
+        <div class="triangle-down"></div>
+        <div class="parallelogram"></div>
+        <div class="rectangle"></div>
+        <div class="cerclev2">
+            <img src="/image/logoEntreprise/{{logo[0]['nom']}}.png" class="logoClientv2">
+        </div>
+        <div class="head">
+            <strong>Boostmakers
+
+
+                <br>
+                <u>www.boostmakers.com</u>
+                <br>Sara sara@boost-makers.com
+
+
+            </strong>
+        </div>
+        <div style ="margin-top:200px;font-size:30px;">&nbsp;&nbsp;&nbsp;&nbsp;▹ &nbsp;AVIS</div>
+        <div class="titreClient">
+            <center>
+                <font size="6">Clients professionnels</font>
+            </center>
+        </div>
+        <div class="titreSalarie">
+            <center>
+                <font size="6">Salariés</font>
+            </center>
+        </div>
+        <div class="avisClient">
+            {% for unAvis in lesAvis %}
+                {% if unAvis["statut"] == "Client" %}
+
+                    <INPUT TYPE=button id="btclient" value="{{unAvis['libelle']}}" DISABLED>
+
+                {% endif %}
+
+            {% endfor %}
+
+
+
+        </div>
+        <div class="avisSalarie">
+            {% for unAvis in lesAvis %}
+
+                {% if unAvis["statut"] == "Salarie" %}
+
+                    <INPUT TYPE=button id="btsalarie" value="{{unAvis['libelle']}}" DISABLED>
+
+                {% endif %}
+            {% endfor %}
+
+
+
+        </div>
+        </div>
+    </section>
+{% endif %}
+
+
+{% if cpt2 >=8 %}
+    <section class="pagefixe{{cpt2+2}}">
+        <img src="/image/logoBM.png" class ="logoBM">
+        <div class="triangle-down"></div>
+        <div class="parallelogram"></div>
+        <div class="rectangle"></div>
+        <div class="cerclev2">
+            <img src="/image/logoEntreprise/{{logo[0]['nom']}}.png" class="logoClientv2">
+        </div>
+        <div class="head">
+            <strong>Boostmakers
+
+
+                <br>
+                <u>www.boostmakers.com</u>
+                <br>Sara sara@boost-makers.com
+
+
+            </strong>
+        </div>
+
+        <div class="titreClient">
+            <center>
+                <font size="6">Commentaire</font>
+            </center>
+        </div>
+        <div style ="height: 600px;"class="avisClient">
+            <article style="color:white;font-size: 120%;margin-top: 10px;margin-left: 15px;margin-right: 5px;">{{ com | nl2br }}</article>
+        </div>
+    </section>
+{%  else  %}
+    <section class="pagefixe{{cpt2+2}}" style="margin-top:-30px;">
+        <img src="/image/logoBM.png" class ="logoBM">
+        <div class="triangle-down"></div>
+        <div class="parallelogram"></div>
+        <div class="rectangle"></div>
+        <div class="cerclev2">
+            <img src="/image/logoEntreprise/{{logo[0]['nom']}}.png" class="logoClientv2">
+        </div>
+        <div class="head">
+            <strong>Boostmakers
+
+
+                <br>
+                <u>www.boostmakers.com</u>
+                <br>Sara sara@boost-makers.com
+
+
+            </strong>
+        </div>
+
+        <div class="titreClient">
+            <center>
+                <font size="6">Commentaire</font>
+            </center>
+        </div>
+        <div style ="height: 600px;"class="avisClient">
+            <article style="color:white;font-size: 120%;margin-top: 10px;margin-left: 15px;margin-right: 5px;">{{ com | nl2br }}</article>
+        </div>
+    </section>
+{%  endif %}
+{% if cpt2 >=8 %}
+    <section class="pagefixe{{cpt2+3}}">
+        <img src="/image/logoBM.png" class ="logoBM">
+        <div class="triangle-down"></div>
+        <div class="parallelogram"></div>
+        <div class="rectangle"></div>
+        <div class="cerclev2">
+            <img src="/image/logoEntreprise/{{logo[0]['nom']}}.png" class="logoClientv2">
+        </div>
+        <div class="head">
+            <strong>Boostmakers
+
+
+                <br>
+                <u>www.boostmakers.com</u>
+                <br>Sara sara@boost-makers.com
+
+
+            </strong>
+        </div>
+        <artcile style ="margin-left:40px;position: absolute; top: 300px;">
+
+            <h1>Rapport privé datant du {{ "now"|date("d/m/Y") }}</h1>
+
+
+           <font style="font-size: 30px;">La société CONSCONTE SAS est propriétaire du site www.boost-makers.com.
+               <br><br>
+            BoostMakers est une marque déposée de  CONSCONTE SAS    au capital de 28 000 € au RCS Meaux SIREN 827 898 529
+               <br>               <br>
+
+               Siège social: 08 Avenue André Malraux 77600 BUSSY SAINT GEORGES.
+               <br>               <br>
+
+               Contact :  Sara BOULANGER sara@boost-makers.com
+               <br> <br>
+               Téléphone : 06 95 65 14 53 </font>
+        </artcile>
+    </section>
+{%  else %}
+    <section class="pagefixe{{cpt2+3}}" style="margin-top:-30px;">
+        <img src="/image/logoBM.png" class ="logoBM">
+        <div class="triangle-down"></div>
+        <div class="parallelogram"></div>
+        <div class="rectangle"></div>
+        <div class="cerclev2">
+            <img src="/image/logoEntreprise/{{logo[0]['nom']}}.png" class="logoClientv2">
+        </div>
+        <div class="head">
+            <strong>Boostmakers
+
+
+                <br>
+                <u>www.boostmakers.com</u>
+                <br>Sara sara@boost-makers.com
+
+
+            </strong>
+        </div>
+        <artcile style ="margin-left:40px;position: absolute; top: 300px;">
+
+            <h1>Rapport privé datant du {{ "now"|date("d/m/Y") }}</h1>
+
+
+            <font style="font-size: 30px;">La société CONSCONTE SAS est propriétaire du site www.boost-makers.com.
+                <br><br>
+                BoostMakers est une marque déposée de  CONSCONTE SAS    au capital de 28 000 € au RCS Meaux SIREN 827 898 529
+                <br>               <br>
+
+                Siège social: 08 Avenue André Malraux 77600 BUSSY SAINT GEORGES.
+                <br>               <br>
+
+                Contact :  Sara BOULANGER sara@boost-makers.com
+                <br> <br>
+                Téléphone : 06 95 65 14 53 </font>
+        </artcile>
+    </section>
+{%  endif %}
+
+
+<script type="text/javascript">
+    google.charts.load('current', {'packages':['corechart']});
+    google.charts.setOnLoadCallback(drawChart);
+
+    function drawChart() {
+        var moy = new Object();
+        moy = {{moyTheme|json_encode|raw}};
+        var legende = ["A","B","C","D","E","F","G","H"];
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'Theme');
+        data.addColumn('number', '');
+        data.addColumn({type : 'string',role : 'annotation'})
+
+        for (var i in moy){
+            var libelle = legende[i];
+            var moyenne = parseInt(moy[i]["moy"]);
+            var moyPourcent = moyenne+'%'
+
+            data.addRow([libelle,moyenne,moyPourcent]);
+
+
+        }
+
+
+
+
+
+        var options = {
+            hAxis: {title: 'Thèmes',  titleTextStyle: {color: '#333'}},
+            vAxis: {minValue: 0,maxValue :100,title : 'Moyennes'},
+            curveType : 'function',
+            pointSize:7,
+            dataOpacity:0.5
+
+        };
+
+        var chart = new google.visualization.AreaChart(document.getElementById('chart_div'));
+        chart.draw(data, options);
+    }
+
+</script>
+<div class="pagination1">1</div>
+<div class="pagination2">2</div>
+<div class="pagination3">3</div>
+{% for i in range(4,cpt2+6) %}
+
+    <div class="pagination{{ i }}">{{ i }}</div>
+
+
+{% endfor %}
+
+</body>

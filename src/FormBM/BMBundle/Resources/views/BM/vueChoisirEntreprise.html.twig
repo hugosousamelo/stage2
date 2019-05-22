@@ -1,0 +1,80 @@
+{% extends "::base.html.twig" %}
+
+	{% block head %}
+		<meta charset="utf-8"/>
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+	{% endblock %}
+	{% block body %}
+		<div>
+			<div class="text-center">
+				
+			</div>
+			<br><br><br><br><br><br><br><br>
+			<div class="offset-2 col-8">
+				
+				{{ form_start(form) }}
+
+					<h4>Faire un rapport</h4>
+					<div class="form-control">
+				
+
+
+					<div>
+
+
+					{{ form_label(form.entreprise) }}
+					{{ form_widget(form.entreprise) }}
+
+					
+					<br>
+					{{ form_label(form.statut) }}
+
+					{{ form_widget(form.statut) }}
+					
+					<br>
+
+					{{ form_label(form.Badge) }}
+
+					{{ form_widget(form.Badge) }}
+
+
+					<br>
+					{{ form_label(form.DescriptionEtp) }}
+
+					{{ form_widget(form.DescriptionEtp) }}
+					
+
+					<br>
+
+					{{ form_label(form.avisPerso) }}
+
+					{{ form_widget(form.avisPerso) }}
+
+					<br>
+
+					{{ form_label(form.Commentaire) }}
+
+					{{ form_widget(form.Commentaire) }}
+
+
+
+					</div>
+
+
+
+					<div class='btn'>
+					{{ form_label(form.Enregistrer) }}
+					{{ form_widget(form.Enregistrer) }}
+					</div>
+
+				{{ form_end(form) }}
+
+
+			</div>
+		</div>
+
+
+
+
+		
+	{% endblock %}

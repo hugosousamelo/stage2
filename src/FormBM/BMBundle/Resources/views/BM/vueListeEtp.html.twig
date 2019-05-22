@@ -1,0 +1,34 @@
+{% extends "::base.html.twig" %}
+
+	{% block head %}
+        <meta charset="utf-8"/>
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+    {% endblock %}
+	{% block body %}
+        <div>
+            <div class="text-center">
+        <br>
+                <h2>Liste des entreprises</h2>
+
+        {% if choix=='supprimer' %}
+        <h2 style="color:red;">Cliquez sur le nom de l'entreprise pour supprimer ses pourcentages et ses avis, /!\ suppression immédiate après avoir cliquer sur l'entreprise !</h2>
+        <br>
+
+                {% for etp in listeEtp %}
+                    <p><a href="{{ path('supEtp', {'id_entreprise': etp.id}) }}">{{etp.nom}}</a></p>
+
+
+                {% endfor %}
+        {% elseif choix =='editer' %}
+         <h2 >Cliquez sur le nom de l'entreprise à éditer.</h2>
+                        <br>
+
+                        {% for etp in listeEtp %}
+         <p><a href="{{ path('editEtp', {'id_entreprise': etp.id}) }}">{{etp.nom}}</a></p>
+
+
+                {% endfor %}
+        {%  endif %}
+            </div>
+        </div>
+    {% endblock %}

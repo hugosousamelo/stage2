@@ -1,0 +1,7 @@
+form_bmbm:
+    resource: "@FormBMBMBundle/Resources/config/routing.yml"
+    prefix:   /
+
+app:
+    resource: '@AppBundle/Controller/'
+    type: annotation

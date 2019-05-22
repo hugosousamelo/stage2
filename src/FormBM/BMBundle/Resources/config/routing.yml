@@ -1,0 +1,67 @@
+form_bmbm_homepage:
+    path:     /
+    defaults: { _controller: FormBMBMBundle:Default:index }
+ajouterEntreprise:
+    path:     /entreprise/ajouter
+    defaults: { _controller: FormBMBMBundle:Entreprise:ajouterEntreprise }
+ajouterAvis:
+    path:     /avis/ajouter
+    defaults: { _controller: FormBMBMBundle:Avis:ajouterAvis }
+
+ajouterLogo:
+    path:     /logo/ajouter
+    defaults: { _controller: FormBMBMBundle:Logo:ajouterLogo }
+
+ajouterMotCle:
+     path:     /motcle/ajouter
+     defaults: { _controller: FormBMBMBundle:MotCle:ajouterMotCle}
+
+ajouterSousTheme:
+     path:     /soustheme/ajouter
+     defaults: { _controller: FormBMBMBundle:SousTheme:ajouterSousTheme}   
+
+ajouterTheme:
+     path:     /theme/ajouter
+     defaults: { _controller: FormBMBMBundle:Theme:ajouterTheme}            
+
+ajouterFiche:
+     path:     /fiche/ajouter
+     defaults: { _controller: FormBMBMBundle:Fiche:ajouterFiche} 
+
+
+
+choix_entreprise_rapport:
+     path:     /rapport/choisir
+     defaults: { _controller: FormBMBMBundle:Fiche:choisirEntreprise}
+
+creer_rapport_Public:
+     path:     /rapport/public/{id}
+     defaults: { _controller: FormBMBMBundle:Fiche:creerRapportPublic}
+creer_rapport_Privé:
+     path:     /rapport/prive/{id}
+     defaults: { _controller: FormBMBMBundle:Fiche:creerRapportPrive}
+
+
+listerSousTheme:
+     path:     /soustheme/lister/{theme_id}
+     defaults: { _controller: FormBMBMBundle:SousTheme:listerSousTheme}  
+
+listerTheme:
+     path:     /lister/{choix}
+     defaults: { _controller: FormBMBMBundle:Theme:listerTheme}  
+
+editSousTheme:
+   path:     /soustheme/edit/{id}
+   defaults: { _controller: FormBMBMBundle:SousTheme:editSousTheme}
+editTheme:
+   path:     /theme/edit/{id}
+   defaults: { _controller: FormBMBMBundle:Theme:editTheme}
+supEtp:
+  path:     /entreprise/supprimer/{id_entreprise}
+  defaults: { _controller: FormBMBMBundle:Entreprise:supprimerEtp}
+ListeEtp:
+  path:     /lister/entreprise/{choix}
+  defaults: { _controller: FormBMBMBundle:Entreprise:ListeEtp}
+editEtp:
+  path:     /entreprise/editer/{id_entreprise}
+  defaults: { _controller: FormBMBMBundle:Entreprise:editerEtp}

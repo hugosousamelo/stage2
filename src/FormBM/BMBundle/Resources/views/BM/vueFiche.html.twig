@@ -1,0 +1,37 @@
+{% extends "::base.html.twig" %}
+
+	{% block head %}
+		<meta charset="utf-8"/>
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+	{% endblock %}
+	{% block body %}
+		<div>
+			<div class="text-center">
+				
+			</div>
+			<br><br><br><br><br><br><br><br>
+			<div class="offset-2 col-8">
+
+				
+					<h4>Ajouter les thèmes et sous-thèmes</h4>
+					<div class="form-control">
+				{{form_start(form)}}
+
+				{{form_label(form.entreprise)}}
+				{{form_widget(form.entreprise)}}
+
+				{{form_label(form.theme)}}
+				{{form_widget(form.theme)}}
+				<br>
+
+				{{form_end(form)}}
+
+
+{{ form(form) }}
+
+				
+			</div>
+		</div>
+
+
+	{% endblock %}

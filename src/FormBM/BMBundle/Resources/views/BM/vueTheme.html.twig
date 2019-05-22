@@ -1,0 +1,46 @@
+{% extends "::base.html.twig" %}
+
+	{% block head %}
+		<meta charset="utf-8"/>
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+	{% endblock %}
+	{% block body %}
+		<div>
+			<div class="text-center">
+				
+			</div>
+			<br><br><br><br><br><br><br><br>
+		
+			<div class="offset-2 col-8">
+
+				{{ form_start(form) }}
+					<h4>Ajouter un thème</h4>
+					<div class="form-control">
+				
+
+
+					<div>
+
+
+					{{ form_label(form.libelle) }}
+					{{ form_widget(form.libelle) }}
+
+		
+
+
+					</div>
+
+					<div class='btn'>
+					{{ form_label(form.Annuler) }}
+					{{ form_widget(form.Annuler) }}
+					</div>
+
+					<div class='btn'>
+					{{ form_label(form.Enregistrer) }}
+					{{ form_widget(form.Enregistrer) }}
+					</div>
+
+				{{ form_end(form) }}
+			</div>
+		</div>
+	{% endblock %}

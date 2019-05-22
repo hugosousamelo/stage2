@@ -1,0 +1,62 @@
+{% extends "::base.html.twig" %}
+
+	{% block head %}
+		<meta charset="utf-8"/>
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+	{% endblock %}
+	{% block body %}
+		<div>
+			<div class="text-center">
+				
+			</div>
+			<br><br><br>
+			<div class="offset-2 col-8">
+
+				{{ form_start(form) }}
+					<h4>Ajouter une entreprise</h4>
+					<div class="form-control">
+				
+
+
+					<div>
+					{{ form_label(form.nom) }}
+					{{ form_widget(form.nom) }}
+
+					{{ form_label(form.ville) }}
+					{{ form_widget(form.ville) }}
+
+					{{ form_label(form.codePostal) }}
+					{{ form_widget(form.codePostal) }}
+
+					{{ form_label(form.siteWeb) }}
+					{{ form_widget(form.siteWeb) }}
+
+					{{form_label(form.nomDirigeant) }}
+					{{ form_widget(form.nomDirigeant) }}
+
+					{{form_label(form.numTel) }}
+					{{ form_widget(form.numTel) }}
+
+
+					{{ form_label(form.mail) }}
+					{{ form_widget(form.mail) }}
+
+
+					{{ form_label(form.logo) }}
+					{{ form_widget(form.logo) }}
+					</div>
+
+					<div class='btn'>
+					{{ form_label(form.Annuler) }}
+					{{ form_widget(form.Annuler) }}
+					</div>
+
+					<div class='btn'>
+					{{ form_label(form.Enregistrer) }}
+					{{ form_widget(form.Enregistrer) }}
+					</div>
+
+				{{ form_end(form) }}
+			</div>
+		</div>
+	{% endblock %}

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        {% block stylesheets %}{% endblock %}
+            <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+        <link rel="stylesheet" href="/css/style.css" />
+
+        <link rel="stylesheet" href="{{ asset('css/bootstrap-4.0.0/dist/css/bootstrap.min.css') }}" />
+
+
+
+
+
+
+    </head>
+    <body>
+
+
+
+
+
+
+        <div class="navbarBM">
+            <a style =" text-decoration: none;    margin-left:30%;"href="/">Home</a>
+            <div class="dropdownBM">
+                <button class="dropbtnBM">Peupler la BDD
+                    <i class="fa fa-caret-downBM"></i>
+                </button>
+                <div class="dropdown-contentBM">
+                    <a href="/theme/ajouter">Ajouter un thème</a>
+                    <a href="/soustheme/ajouter">Ajouter un sous-thème</a>
+                    <a href="/motcle/ajouter">Ajouter un mot-clé</a>
+
+
+
+                </div>
+            </div>
+            <div class="dropdownBM">
+                <button class="dropbtnBM">Créer un rapport
+                    <i class="fa fa-caret-downBM"></i>
+                </button>
+                <div class="dropdown-contentBM">
+                    <a href="/logo/ajouter">Ajouter un logo</a>
+
+                    <a href="/entreprise/ajouter">Ajouter une entreprise</a>
+                    <a href="/fiche/ajouter">Ajouter des pourcentages</a>
+                    <a href="/avis/ajouter">Ajouter un avis</a>
+
+                    <a href="/rapport/choisir">Voir le rapport</a>
+
+                </div>
+            </div>
+
+            <div class="dropdownBM">
+                <button class="dropbtnBM">Editer
+                    <i class="fa fa-caret-downBM"></i>
+                </button>
+                <div class="dropdown-contentBM">
+                    <a href="/lister/theme">Editer un thème</a>
+                    <a href="/lister/sousTheme">Editer un sous-thème</a>
+                    <a href="/lister/entreprise/editer">Editer une entreprise</a>
+
+                </div>
+            </div>
+            <a id="supbm" href="/lister/entreprise/supprimer">Supprimer pourcentages/avis d'une entreprise</a>
+        </div>
+        {% block body %}{% endblock %}
+        <script src="{{asset('js/jquery.min.js')}}"></script>
+        <script src="{{asset('js/app.js')}}"></script>
+
+        {% block javascripts %}{% endblock %}
+    </body>
+</html>
